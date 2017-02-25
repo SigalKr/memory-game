@@ -1,0 +1,51 @@
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  background: lightslategray;
+  align-self: center;
+}
+body{
+  display: flex;
+  justify-content: center;
+}
+h1{
+  text-align: center;
+}
+#cards {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.card{
+  flex-basis: 25%;
+    border: 2px black solid;
+    height: 300px;
+    margin: 5px;
+}
+.card1, .card0, .card2{
+  flex-basis: 25%;
+    border: 2px black solid;
+    height: 300px;
+    margin: 5px;
+}
+#colorBoxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.box {
+  cursor: pointer;
+  border: 1px black solid;
+  height: 50px;
+  flex-basis: 29%;
+  margin: 5px;
+}
