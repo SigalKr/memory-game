@@ -66,7 +66,7 @@ function chooseColor(cardC){
         console.log(userChoice,randomcards)
         console.log(convertToHex(userChoice[0]))
         console.log(convertToHex(userChoice[0]),randomcards[0])
-        if (convertToHex(userChoice[0])==randomcards[0]){ console.log(userChoice,randomcards);}
+        if (rgb2hex(userChoice[0])==randomcards[0]){ console.log(userChoice,randomcards);}
         document.querySelector('.card'+cardC).style.backgroundColor=window.getComputedStyle(a.target).backgroundColor},true);
     };
 
@@ -80,6 +80,22 @@ function convertToHex(str){
       hexb = hexb.length == 1 ? '0' + hexb: hexb;
   var hex = '#'+ hexr + hexg + hexb;
   return hex;
+}
+
+function rgb2hex(rgb){
+ rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+ return (rgb && rgb.length === 4) ? "#" +
+  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+}
+function hex2rgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? ("rgb(" +
+            parseInt(result[1], 16) + "," + 
+            parseInt(result[2], 16) + "," + 
+            parseInt(result[3], 16) + ")"
+        ): null;
 }
 
 //Start Game
